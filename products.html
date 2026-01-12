@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pinetree Solution - Amazon Products</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .products-header {
+            background: linear-gradient(135deg, #0f3460 0%, #1a1a2e 100%);
+            padding: 30px 20px;
+            text-align: center;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        }
+        
+        .admin-link {
+            display: inline-block;
+            background: linear-gradient(90deg, #ff6b6b 0%, #ff4444 100%);
+            color: #1a1a2e;
+            padding: 12px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 20px;
+            transition: transform 0.3s ease;
+        }
+        
+        .admin-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(255,107,107,0.4);
+        }
+        
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+        
+        .product-card {
+            background: linear-gradient(135deg, #1a1a2e 0%, #0f3460 100%);
+            padding: 25px;
+            border-radius: 12px;
+            border: 2px solid #00d4ff;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 35px rgba(0,212,255,0.3);
+            border-color: #00ff88;
+        }
+        
+        .product-card h3 {
+            color: #00d4ff;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+            min-height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .product-card .price-section {
+            background: #16213e;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        
+        .product-card .original-price {
+            font-size: 1.4em;
+            color: #a8a8a8;
+            margin-bottom: 5px;
+            text-decoration: line-through;
+        }
+        
+        .product-card .final-price {
+            font-size: 1.6em;
+            color: #00ff88;
+            font-weight: bold;
+        }
+        
+        .product-card .charge {
+            font-size: 0.9em;
+            color: #ff6b6b;
+            margin-top: 5px;
+        }
+        
+        .product-card .amazon-link {
+            display: block;
+            background: #ff9900;
+            color: #1a1a2e;
+            padding: 12px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .product-card .amazon-link:hover {
+            background: #ffb84d;
+            transform: translateY(-2px);
+        }
+        
+        .region-badge {
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .usa-badge {
+            background: linear-gradient(90deg, #0033cc 0%, #0066ff 100%);
+            color: white;
+        }
+        
+        .china-badge {
+            background: linear-gradient(90deg, #cc0000 0%, #ff3333 100%);
+            color: white;
+        }
+        
+        .uk-badge {
+            background: linear-gradient(90deg, #660099 0%, #9933cc 100%);
+            color: white;
+        }
+    </style>
+<script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">🌲 Pinetree Solution</div>
+                <div class="owner-info">
+                    <h3>Olawale Abdul-Ganiyu</h3>
+                    <p>📞 +2349030277275</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="index.html">← Back to Home</a></li>
+                <li><a href="admin.html">Admin Dashboard</a></li>
+                <li><a href="#usa">🇺🇸 USA</a></li>
+                <li><a href="#china">🇨🇳 China</a></li>
+                <li><a href="#uk">🇬🇧 UK</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Products Header -->
+    <div class="container">
+        <div class="products-header">
+            <h1 style="color: #00d4ff; margin-bottom: 20px; font-size: 2.5em;">🛍️ Amazon Products</h1>
+            <p style="color: #a8a8a8; font-size: 1.2em; max-width: 800px; margin: 0 auto;">
+                Browse our extensive collection of products from Amazon USA, China, and UK. 
+                All prices include a 1% Pinetree service charge that supports our platform.
+            </p>
+            <a href="admin.html" class="admin-link">🔐 Admin Dashboard</a>
+        </div>
+    </div>
+
+    <!-- USA Products Section -->
+    <section id="usa" class="amazon-section">
+        <div class="container">
+            <h2 style="color: #00d4ff; margin-bottom: 30px; font-size: 2.5em;">🇺🇸 USA Amazon Products</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <span class="region-badge usa-badge">USA</span>
+                    <h3>Beauty and Personal Care Products</h3>
+                    <div class="price-section">
+                        <p class="original-price">Original: $25.00</p>
+                        <p class="final-price">$25.25</p>
+                        <p class="charge">+1% Pinetree Charge: $0.25</p>
+                    </div>
+                    <a target="_blank" href="https://www.amazon.com/b?_encoding=UTF8&tag=amagola-20&linkCode=ur2&linkId=703a5ac4e2675bf0c9dfc30bc6e12cf3&camp=1789&creative=9325&node=3760911" class="amazon-link">
+                        🛒 Buy on Amazon USA
+                    </a>
+                </div>
+                
+                <div class="product-card">
+                    <span class="region-badge usa-badge">USA</span>
+                    <h3>Electronics and Gadgets</h3>
+                    <div class="price-section">
+                        <p class="original-price">Original: $150.00</p>
+                        <p class="final-price">$151.50</p>
+                        <p class="charge">+1% Pinetree Charge: $1.50</p>
+                    </div>
+                    <a target="_blank" href="https://www.amazon.com/b?_encoding=UTF8&tag=amagola-20&linkCode=ur2&linkId=703a5ac4e2675bf0c9dfc30bc6e12cf3&camp=1789&creative=9325&node=3760911" class="amazon-link">
+                        🛒 Buy on Amazon USA
+                    </a>
+                </div>
+                
+                <div class="product-card">
+                    <span class="region-badge usa-badge">USA</span>
+                    <h3>Home and Kitchen Essentials</h3>
+                    <div class="price-section">
+                        <p class="original-price">Original: $89.99</p>
+                        <p class="final-price">$90.89</p>
+                        <p class="charge">+1% Pinetree Charge: $0.90</p>
+                    </div>
+                    <a target="_blank" href="https://www.amazon.com/b?_encoding=UTF8&tag=amagola-20&linkCode=ur2&linkId=703a5ac4e2675bf0c9dfc30bc6e12cf3&camp=1789&creative=9325&node=3760911" class="amazon-link">
+                        🛒 Buy on Amazon USA
+                    </a>
+                </div>
+                
+                <div class="product-card">
+                    <span class="region-badge usa-badge">USA</span>
+                    <h3>Fashion and Accessories</h3>
+                    <div class="price-section">
+                        <p class="original-price">Original: $75.00</p>
+                        <p class="final-price">$75.75</p>
+                        <p class="charge">+1% Pinetree Charge: $0.75</p>
+                    </div>
+                    <a target="_blank" href="https://www.amazon.com/b?_encoding=UTF8&tag=amagola-20&linkCode=ur2&linkId=703a5ac4e2675bf0c9dfc30bc6e12cf3&camp=1789&creative=9325&node=3760911" class="amazon-link">
+                        🛒 Buy on Amazon USA
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- China Products Section -->
+    <section id="china" class="amazon-section">
+        <div class="container">
+            <h2 style="color: #00d4ff; margin-bottom: 30px; font-size: 2.5em;">🇨🇳 China Amazon Products</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <span class="region-badge china-badge">China</span>
+                    <h3>Musical Instruments</h3>
+                    <div class="price-section">
+                        <p class="original-price">Original: $320.00</p>
+                        <p class="final-price">$323.20</p>
+                        <p class="charge">+1% Pinetree Charge: $3.20</p>
+                    </div>
+                    <a target="_blank" href="https://www.amazon.cn/b?_encoding=UTF8&tag=amapinetree-23&linkCode=ur2&linkId=442f2f381107849ab3be09c6def4f4bd&camp=536&creative=3200&node=760233051" class="amazon-link">
+                        🛒 Buy on Amazon China
+                    </a>
+                </div>
+                
+                <div class="product-card">
+                    <span class="region-badge china-badge">China</span>
+                    <h3>Electronics Components</h3>
+                    <div class="price-section">
+                        <p class="original-price">Original: $45.00</p>
+                        <p class="final-price">$45.45</p>
+                        <p class="charge">+1% Pinetree Charge: $0.45</p>
+                    </div>
+                    <a target="_blank" href="https://www.amazon.cn/b?_encoding=UTF8&tag=amapinetree-23&linkCode=ur2&linkId=442f2f381107849ab3be09c6def4f4bd&camp=536&creative=3200&node=760233051" class="amazon-link">
+                        🛒 Buy on Amazon China
+                    </a>
+                </div>
+                
+                <div class="product-card">
+                    <span class="region-badge china-badge">China</span>
+                    <h3>Home Decor Items</h3>
+                    <div class="price-section">
+                        <p class="original-price">Original: $28.50</p>
+                        <p class="final-price">$28.79</p>
+                        <p class="charge">+1% Pinetree Charge: $0.29</p>
+                    </div>
+                    <a target="_blank" href="https://www.amazon.cn/b?_encoding=UTF8&tag=amapinetree-23&linkCode=ur2&linkId=442f2f381107849ab3be09c6def4f4bd&camp=536&creative=3200&node=760233051" class="amazon-link">
+                        🛒 Buy on Amazon China
+                    </a>
+                </div>
+                
+                <div class="product-card">
+                    <span class="region-badge china-badge">China</span>
+                    <h3>Smartphone Accessories</h3>
+                    <div class="price-section">
+                        <p class="original-price">Original: $15.99</p>
+                        <p class="final-price">$16.15</p>
+                        <p class="charge">+1% Pinetree Charge: $0.16</p>
+                    </div>
+                    <a target="_blank" href="https://www.amazon.cn/b?_encoding=UTF8&tag=amapinetree-23&linkCode=ur2&linkId=442f2f381107849ab3be09c6def4f4bd&camp=536&creative=3200&node=760233051" class="amazon-link">
+                        🛒 Buy on Amazon China
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- UK Products Section -->
+    <section id="uk" class="amazon-section">
+        <div class="container">
+            <h2 style="color: #00d4ff; margin-bottom: 30px; font-size: 2.5em;">🇬🇧 UK Amazon Products</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <span class="region-badge uk-badge">UK</span>
+                    <h3>Home Appliances</h3>
+                    <div class="price-section">
+                        <p class="original-price">Original: £180.00</p>
+                        <p class="final-price">£181.80</p>
+                        <p class="charge">+1% Pinetree Charge: £1.80</p>
+                    </div>
+                    <a target="_blank" href="https://www.amazon.co.uk/b?_encoding=UTF8&tag=adegan95-21&linkCode=ur2&linkId=f16b2b362ecc3eb17b582311034727f2&camp=1634&creative=6738&node=925161031" class="amazon-link">
+                        🛒 Buy on Amazon UK
+                    </a>
+                </div>
+                
+                <div class="product-card">
+                    <span class="region-badge uk-badge">UK</span>
+                    <h3>Kitchen Equipment</h3>
+                    <div class="price-section">
+                        <p class="original-price">Original: £95.00</p>
+                        <p class="final-price">£95.95</p>
+                        <p class="charge">+1% Pinetree Charge: £0.95</p>
+                    </div>
+                    <a target="_blank" href="https://www.amazon.co.uk/b?_encoding=UTF8&tag=adegan95-21&linkCode=ur2&linkId=f16b2b362ecc3eb17b582311034727f2&camp=1634&creative=6738&node=925161031" class="amazon-link">
+                        🛒 Buy on Amazon UK
+                    </a>
+                </div>
+                
+                <div class="product-card">
+                    <span class="region-badge uk-badge">UK</span>
+                    <h3>Office Supplies</h3>
+                    <div class="price-section">
+                        <p class="original-price">Original: £42.50</p>
+                        <p class="final-price">£42.93</p>
+                        <p class="charge">+1% Pinetree Charge: £0.43</p>
+                    </div>
+                    <a target="_blank" href="https://www.amazon.co.uk/b?_encoding=UTF8&tag=adegan95-21&linkCode=ur2&linkId=f16b2b362ecc3eb17b582311034727f2&camp=1634&creative=6738&node=925161031" class="amazon-link">
+                        🛒 Buy on Amazon UK
+                    </a>
+                </div>
+                
+                <div class="product-card">
+                    <span class="region-badge uk-badge">UK</span>
+                    <h3>Garden Tools</h3>
+                    <div class="price-section">
+                        <p class="original-price">Original: £65.00</p>
+                        <p class="final-price">£65.65</p>
+                        <p class="charge">+1% Pinetree Charge: £0.65</p>
+                    </div>
+                    <a target="_blank" href="https://www.amazon.co.uk/b?_encoding=UTF8&tag=adegan95-21&linkCode=ur2&linkId=f16b2b362ecc3eb17b582311034727f2&camp=1634&creative=6738&node=925161031" class="amazon-link">
+                        🛒 Buy on Amazon UK
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Information -->
+    <div class="container">
+        <div class="contact-section">
+            <h2 style="color: #00d4ff; text-align: center;">💰 Pricing Structure</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 30px;">
+                <div style="background: #16213e; padding: 25px; border-radius: 10px; border: 2px solid #00d4ff; text-align: center;">
+                    <h3 style="color: #00d4ff; margin-bottom: 15px;">Product Price</h3>
+                    <p style="font-size: 1.5em; color: #00ff88;">Original Price</p>
+                    <p style="color: #a8a8a8; margin-top: 10px;">The actual price from Amazon</p>
+                </div>
+                <div style="background: #16213e; padding: 25px; border-radius: 10px; border: 2px solid #00d4ff; text-align: center;">
+                    <h3 style="color: #00d4ff; margin-bottom: 15px;">Pinetree Charge</h3>
+                    <p style="font-size: 1.5em; color: #ff6b6b;">+1%</p>
+                    <p style="color: #a8a8a8; margin-top: 10px;">Service fee for platform</p>
+                </div>
+                <div style="background: #16213e; padding: 25px; border-radius: 10px; border: 2px solid #00d4ff; text-align: center;">
+                    <h3 style="color: #00d4ff; margin-bottom: 15px;">Final Price</h3>
+                    <p style="font-size: 1.5em; color: #00ff88;">Total Amount</p>
+                    <p style="color: #a8a8a8; margin-top: 10px;">Product + 1% charge</p>
+                </div>
+            </div>
+            <p style="text-align: center; margin-top: 30px; color: #00d4ff; font-size: 1.2em;">
+                The 1% charge goes to the Pinetree Dollar Wallet, while the main payment goes directly to Amazon.
+            </p>
+        </div>
+    </div>
+
+    <!-- Admin Dashboard Link -->
+    <div class="container" style="text-align: center; margin: 40px 0;">
+        <a href="admin.html" class="admin-link" style="padding: 15px 40px; font-size: 1.2em;">
+            🔐 Access Admin Dashboard
+        </a>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Pinetree Solution. All rights reserved.</p>
+            <p>Owner: <span class="owner">Olawale Abdul-Ganiyu</span></p>
+            <p>📞 +2349030277275</p>
+        </div>
+    </footer>
+</body>
+</html>

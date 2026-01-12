@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pinetree Solution - Your Global E-Commerce Partner</title>
+    <link rel="stylesheet" href="styles.css">
+<script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">🌲 Pinetree Solution</div>
+                <div class="owner-info">
+                    <h3>Olawale Abdul-Ganiyu</h3>
+                    <p>📞 +2349030277275</p>
+                </div>
+            </div>

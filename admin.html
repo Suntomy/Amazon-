@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pinetree Solution - Admin Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+<script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">🌲 Pinetree Admin</div>
+                <div class="owner-info">
+                    <h3>Admin Dashboard</h3>
+                    <p>Olawale Abdul-Ganiyu</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="index.html">← Back to Home</a></li>
+                <li><a href="#dashboard">Dashboard</a></li>
+                <li><a href="#wallet">Wallet</a></li>
+                <li><a href="#withdraw">Withdrawals</a></li>
+                <li><a href="#documents">Documents</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Admin Login Section -->
+    <div id="loginSection" class="container">
+        <div class="admin-login">
+            <h2>🔐 Admin Login</h2>
+            <form id="adminLoginForm" onsubmit="verifyAdmin(event)">
+                <div class="form-group">
+                    <label for="adminPassword">Password or 30-Word Address</label>
+                    <input type="password" id="adminPassword" required placeholder="Enter admin password or recovery phrase">
+                </div>
+                <button type="submit" class="send-btn">🚀 Login to Dashboard</button>
+            </form>
+            <p style="text-align: center; margin-top: 20px; color: #ff6b6b; font-size: 0.9em;">
+                ⚠️ Only authorized owner Olawale Abdul-Ganiyu can access this dashboard
+            </p>
+        </div>
+    </div>
+
+    <!-- Admin Dashboard (Hidden until login) -->
+    <div id="dashboardSection" class="container" style="display: none;">
+        <!-- Dashboard Overview -->
+        <section id="dashboard" class="admin-dashboard">
+            <h2>📊 Admin Dashboard</h2>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-bottom: 30px;">
+                <div style="background: #16213e; padding: 25px; border-radius: 10px; border: 2px solid #00d4ff; text-align: center;">
+                    <h3 style="color: #00d4ff; margin-bottom: 10px;">Total Users</h3>
+                    <div style="font-size: 2.5em; color: #00ff88;">1,247</div>
+                </div>
+                <div style="background: #16213e; padding: 25px; border-radius: 10px; border: 2px solid #00d4ff; text-align: center;">
+                    <h3 style="color: #00d4ff; margin-bottom: 10px;">Transactions</h3>
+                    <div style="font-size: 2.5em; color: #00ff88;">3,892</div>
+                </div>
+                <div style="background: #16213e; padding: 25px; border-radius: 10px; border: 2px solid #00d4ff; text-align: center;">
+                    <h3 style="color: #00d4ff; margin-bottom: 10px;">Today's Revenue</h3>
+                    <div style="font-size: 2.5em; color: #00ff88;">$4,250</div>
+                </div>
+                <div style="background: #16213e; padding: 25px; border-radius: 10px; border: 2px solid #00d4ff; text-align: center;">
+                    <h3 style="color: #00d4ff; margin-bottom: 10px;">Active Sessions</h3>
+                    <div style="font-size: 2.5em; color: #00ff88;">156</div>
+                </div>
+            </div>
+
+            <div style="background: #16213e; padding: 25px; border-radius: 10px; margin: 20px 0;">
+                <h3 style="color: #00d4ff; margin-bottom: 15px;">Recent Transactions</h3>
+                <div style="overflow-x: auto;">
+                    <table style="width: 100%; border-collapse: collapse; color: #a8a8a8;">
+                        <tr style="background: #0f3460; color: #00d4ff;">
+                            <th style="padding: 12px; text-align: left;">Transaction ID</th>
+                            <th style="padding: 12px; text-align: left;">Customer</th>
+                            <th style="padding: 12px; text-align: left;">Product</th>
+                            <th style="padding: 12px; text-align: right;">Amount</th>
+                            <th style="padding: 12px; text-align: right;">Charge (1%)</th>
+                            <th style="padding: 12px; text-align: left;">Status</th>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #00d4ff;">
+                            <td style="padding: 12px;">#TXN001247</td>
+                            <td style="padding: 12px;">John Doe</td>
+                            <td style="padding: 12px;">Beauty Products USA</td>
+                            <td style="padding: 12px; text-align: right;">$150.00</td>
+                            <td style="padding: 12px; text-align: right; color: #00ff88;">+$1.50</td>
+                            <td style="padding: 12px; color: #00ff88;">Completed</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #00d4ff;">
+                            <td style="padding: 12px;">#TXN001246</td>
+                            <td style="padding: 12px;">Jane Smith</td>
+                            <td style="padding: 12px;">Musical Instrument China</td>
+                            <td style="padding: 12px; text-align: right;">$320.00</td>
+                            <td style="padding: 12px; text-align: right; color: #00ff88;">+$3.20</td>
+                            <td style="padding: 12px; color: #00ff88;">Completed</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #00d4ff;">
+                            <td style="padding: 12px;">#TXN001245</td>
+                            <td style="padding: 12px;">Mike Johnson</td>
+                            <td style="padding: 12px;">Appliances UK</td>
+                            <td style="padding: 12px; text-align: right;">$280.00</td>
+                            <td style="padding: 12px; text-align: right; color: #00ff88;">+$2.80</td>
+                            <td style="padding: 12px; color: #ffff00;">Pending</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pinetree Wallet Section -->
+        <section id="wallet" class="wallet-section">
+            <h3>💰 Pinetree Dollar Wallet</h3>
+            <div class="wallet-balance">
+                Balance: $12,450.00 USD
+            </div>
+            <p style="color: #a8a8a8; margin-bottom: 15px;">This wallet receives 1% charges from all Amazon transactions.</p>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 20px;">
+                <div style="background: #0f3460; padding: 20px; border-radius: 8px;">
+                    <p style="color: #a8a8a8; font-size: 0.9em;">Today's Earnings</p>
+                    <p style="font-size: 1.5em; color: #00ff88;">+$425.00</p>
+                </div>
+                <div style="background: #0f3460; padding: 20px; border-radius: 8px;">
+                    <p style="color: #a8a8a8; font-size: 0.9em;">This Week</p>
+                    <p style="font-size: 1.5em; color: #00ff88;">+$2,890.00</p>
+                </div>
+                <div style="background: #0f3460; padding: 20px; border-radius: 8px;">
+                    <p style="color: #a8a8a8; font-size: 0.9em;">This Month</p>
+                    <p style="font-size: 1.5em; color: #00ff88;">+$12,450.00</p>
+                </div>
+                <div style="background: #0f3460; padding: 20px; border-radius: 8px;">
+                    <p style="color: #a8a8a8; font-size: 0.9em;">Total Transactions</p>
+                    <p style="font-size: 1.5em; color: #00ff88;">3,892</p>
+                </div>
+            </div>
+
+            <div style="background: #16213e; padding: 20px; border-radius: 8px; margin-top: 20px; border: 1px solid #00d4ff;">
+                <h4 style="color: #00d4ff; margin-bottom: 15px;">Wallet Address</h4>
+                <p style="word-break: break-all; color: #a8a8a8; font-family: monospace;">
+                    0x7F5c764cBc14f9669B88837ca1490cCa17c31607
+                </p>
+                <button class="send-btn" style="width: auto; margin-top: 15px; padding: 10px 20px;" onclick="copyWalletAddress()">
+                    📋 Copy Address
+                </button>
+            </div>
+        </section>
+
+        <!-- Withdrawal Section -->
+        <section id="withdraw" class="withdraw-section">
+            <h4>🏦 Withdraw to Bank Account</h4>
+            
+            <div class="bank-details">
+                <p><strong>Bank Name:</strong> United Bank for Africa (UBA)</p>
+                <p><strong>Account Name:</strong> Olawale Abdul-Ganiyu Adeshina</p>
+                <p><strong>Account Number:</strong> 2104027565</p>
+                <p><strong>Source:</strong> Pinetree Solution - Amazon Charges</p>
+            </div>
+
+            <form onsubmit="processWithdrawal(event)" style="margin-top: 20px;">
+                <div class="form-group">
+                    <label for="withdrawAmount">Withdrawal Amount (USD)</label>
+                    <input type="number" id="withdrawAmount" required placeholder="Enter amount to withdraw" min="10" step="0.01">
+                </div>
+                <div class="form-group">
+                    <label for="withdrawReason">Reason for Withdrawal</label>
+                    <textarea id="withdrawReason" required placeholder="Enter reason for withdrawal"></textarea>
+                </div>
+                <button type="submit" class="send-btn">💸 Process Withdrawal</button>
+            </form>
+
+            <div style="background: #16213e; padding: 20px; border-radius: 8px; margin-top: 20px;">
+                <h4 style="color: #00d4ff; margin-bottom: 15px;">Recent Withdrawals</h4>
+                <div style="overflow-x: auto;">
+                    <table style="width: 100%; border-collapse: collapse; color: #a8a8a8;">
+                        <tr style="background: #0f3460; color: #00d4ff;">
+                            <th style="padding: 10px; text-align: left;">Date</th>
+                            <th style="padding: 10px; text-align: right;">Amount</th>
+                            <th style="padding: 10px; text-align: left;">Bank</th>
+                            <th style="padding: 10px; text-align: left;">Status</th>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #00d4ff;">
+                            <td style="padding: 10px;">2024-01-15</td>
+                            <td style="padding: 10px; text-align: right;">$2,000.00</td>
+                            <td style="padding: 10px;">UBA - 2104027565</td>
+                            <td style="padding: 10px; color: #00ff88;">Completed</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #00d4ff;">
+                            <td style="padding: 10px;">2024-01-10</td>
+                            <td style="padding: 10px; text-align: right;">$1,500.00</td>
+                            <td style="padding: 10px;">UBA - 2104027565</td>
+                            <td style="padding: 10px; color: #00ff88;">Completed</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #00d4ff;">
+                            <td style="padding: 10px;">2024-01-05</td>
+                            <td style="padding: 10px; text-align: right;">$3,000.00</td>
+                            <td style="padding: 10px;">UBA - 2104027565</td>
+                            <td style="padding: 10px; color: #ffff00;">Processing</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </section>
+        <p>
+            <!-- Crypto Section -->
+    <section id="crypto" class="crypto-section">
+        <div class="container">
+            <h2>₿ Crypto Mining & Trading</h2>
+            <div class="crypto-grid">
+                <div class="crypto-card">
+                    <h4>Bitcoin (BTC)</h4>
+                    <div class="price" id="btcPrice">$43,250.00</div>
+                    <div class="change">+2.5% today</div>
+                    <button class="send-btn mt-20" onclick="mineCrypto('BTC')">Mine BTC</button>
+                </div>
+                <div class="crypto-card">
+                    <h4>Ethereum (ETH)</h4>
+                    <div class="price" id="ethPrice">$2,280.00</div>
+                    <div class="change">+1.8% today</div>
+                    <button class="send-btn mt-20" onclick="mineCrypto('ETH')">Mine ETH</button>
+                </div>
+                <div class="crypto-card">
+                    <h4>Litecoin (LTC)</h4>
+                    <div class="price" id="ltcPrice">$72.50</div>
+                    <div class="change">-0.5% today</div>
+                    <button class="send-btn mt-20" onclick="mineCrypto('LTC')">Mine LTC</button>
+                </div>
+                <div class="crypto-card">
+                    <h4>Dogecoin (DOGE)</h4>
+                    <div class="price" id="dogePrice">$0.082</div>
+                    <div class="change">+5.2% today</div>
+                    <button class="send-btn mt-20" onclick="mineCrypto('DOGE')">Mine DOGE</button>
+                </div>
+            </div>
+        </div>
+    </section>
+</p>
+<script>
+        // Crypto Mining Function (simulated)
+        function mineCrypto(crypto) {
+            const miningTime = Math.random() * 5000 + 3000; // 3-8 seconds
+            alert(`Starting ${crypto} mining process...\n\nThis will take approximately ${Math.round(miningTime/1000)} seconds.`);
+            
+            setTimeout(() => {
+                const minedAmount = (Math.random() * 0.001 + 0.0001).toFixed(8);
+                alert(`✅ Mining Complete!\n\nYou have successfully mined ${minedAmount} ${crypto}!\n\nAmount has been added to your Pinetree Wallet.`);
+            }, miningTime);
+        }
+        
+        </script>
+        <!-- Documents Section -->
+        <section id="documents" class="admin-dashboard">
+            <h2>📄 Documents</h2>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+                <div style="background: #16213e; padding: 25px; border-radius: 10px; border: 2px solid #00d4ff;">
+                    <h3 style="color: #00d4ff; margin-bottom: 15px;">Company Approval Document</h3>
+                    <p style="color: #a8a8a8; margin-bottom: 15px;">Official approval document for Pinetree Solution</p>
+                    <button class="send-btn" onclick="viewDocument('approval')">📄 View Document</button>
+                </div>
+                
+                <div style="background: #16213e; padding: 25px; border-radius: 10px; border: 2px solid #00d4ff;">
+                    <h3 style="color: #00d4ff; margin-bottom: 15px;">Business License</h3>
+                    <p style="color: #a8a8a8; margin-bottom: 15px;">Official business license and registration</p>
+                    <button class="send-btn" onclick="viewDocument('license')">📄 View Document</button>
+                </div>
+                
+                <div style="background: #16213e; padding: 25px; border-radius: 10px; border: 2px solid #00d4ff;">
+                    <h3 style="color: #00d4ff; margin-bottom: 15px;">Owner Information</h3>
+                    <p style="color: #a8a8a8; margin-bottom: 15px;">Owner details and authorization</p>
+                    <button class="send-btn" onclick="viewDocument('owner')">📄 View Document</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Logout Button -->
+        <div style="text-align: center; margin: 30px 0;">
+            <button class="send-btn" style="width: auto; padding: 15px 40px; background: linear-gradient(90deg, #ff6b6b 0%, #ff4444 100%);" onclick="logout()">
+                🚪 Logout
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // Admin Credentials (Only Olawale Abdul-Ganiyu can access)
+        const ADMIN_PASSWORD = "OlawaleAbdulGaniyu2024";
+        const ADMIN_ADDRESS = "olawale abdul ganiyu pinetree solution amazon wallet administrator owner exclusive access only twenty twenty four authorized personnel";
+
+        function verifyAdmin(event) {
+            event.preventDefault();
+            const password = document.getElementById('adminPassword').value;
+            
+            // Check if password or 30-word address matches
+            if (password === ADMIN_PASSWORD || password.toLowerCase() === ADMIN_ADDRESS.toLowerCase()) {
+                // Successful login
+                document.getElementById('loginSection').style.display = 'none';
+                document.getElementById('dashboardSection').style.display = 'block';
+                alert('✅ Login Successful!\n\nWelcome back, Olawale Abdul-Ganiyu!\n\nAdmin Dashboard unlocked.');
+            } else {
+                // Failed login
+                alert('❌ Access Denied!\n\nInvalid credentials. Only the owner Olawale Abdul-Ganiyu is authorized to access this dashboard.\n\nThis attempt has been logged.');
+                document.getElementById('adminPassword').value = '';
+            }
+        }
+
+        function logout() {
+            if (confirm('Are you sure you want to logout from the admin dashboard?')) {
+                document.getElementById('dashboardSection').style.display = 'none';
+                document.getElementById('loginSection').style.display = 'block';
+                document.getElementById('adminPassword').value = '';
+                alert('👋 Successfully logged out.');
+            }
+        }
+
+        function copyWalletAddress() {
+            const address = "0x7F5c764cBc14f9669B88837ca1490cCa17c31607";
+            navigator.clipboard.writeText(address).then(() => {
+                alert('✅ Wallet address copied to clipboard!');
+            }).catch(() => {
+                prompt('Copy this wallet address:', address);
+            });
+        }
+
+        function processWithdrawal(event) {
+            event.preventDefault();
+            const amount = document.getElementById('withdrawAmount').value;
+            const reason = document.getElementById('withdrawReason').value;
+            
+            if (confirm(`Confirm withdrawal of $${parseFloat(amount).toFixed(2)} to UBA account 2104027565?\n\nReason: ${reason}`)) {
+                alert(`✅ Withdrawal Request Submitted!\n\nAmount: $${parseFloat(amount).toFixed(2)}\nBank: United Bank for Africa (UBA)\nAccount: 2104027565\nAccount Name: Olawale Abdul-Ganiyu Adeshina\n\nYour request will be processed within 24-48 business hours.`);
+                document.getElementById('withdrawAmount').value = '';
+                document.getElementById('withdrawReason').value = '';
+            }
+        }
+
+        function viewDocument(type) {
+            let content = '';
+            
+            if (type === 'approval') {
+                content = `
+                    <h2 style="color: #00d4ff; text-align: center;">PINETREE SOLUTION</h2>
+                    <h3 style="text-align: center; margin: 20px 0;">COMPANY APPROVAL DOCUMENT</h3>
+                    
+                    <div style="background: #16213e; padding: 20px; border-radius: 8px; margin: 20px 0;">
+                        <p><strong>Company Name:</strong> Pinetree Solution</p>
+                        <p><strong>Owner:</strong> Olawale Abdul-Ganiyu</p>
+                        <p><strong>Phone:</strong> +2349030277275</p>
+                        <p><strong>Email:</strong> adegan95@gmail.com</p>
+                        <p><strong>Date of Approval:</strong> January 15, 2024</p>
+                    </div>
+                    
+                    <p style="margin: 20px 0; line-height: 1.8;">
+                        This document certifies that Pinetree Solution, owned and operated by Olawale Abdul-Ganiyu, 
+                        is officially approved to conduct e-commerce business operations including Amazon product 
+                        sales, payment processing, and financial services.
+                    </p>
+                    
+                    <p style="margin: 20px 0; line-height: 1.8;">
+                        The company is authorized to:
+                    </p>
+                    <ul style="margin: 20px 0; margin-left: 20px;">
+                        <li>Facilitate Amazon product sales from USA, China, and UK</li>
+                        <li>Process payments with 1% service charges</li>
+                        <li>Operate Pinetree Dollar Wallet for transaction fees</li>
+                        <li>Provide crypto mining and trading services</li>
+                        <li>Manage financial transactions and withdrawals</li>
+                    </ul>
+                    
+                    <div style="text-align: center; margin-top: 40px; border-top: 2px solid #00d4ff; padding-top: 20px;">
+                        <p style="margin: 20px 0;"><strong>Authorized Signature:</strong></p>
+                        <p style="font-size: 1.5em; color: #00d4ff;">Olawale Abdul-Ganiyu</p>
+                        <p style="margin-top: 10px;">Owner, Pinetree Solution</p>
+                        <p style="margin-top: 5px; color: #a8a8a8;">+2349030277275</p>
+                    </div>
+                `;
+            } else if (type === 'license') {
+                content = `
+                    <h2 style="color: #00d4ff; text-align: center;">BUSINESS LICENSE</h2>
+                    <h3 style="text-align: center; margin: 20px 0;">Pinetree Solution</h3>
+                    
+                    <div style="background: #16213e; padding: 20px; border-radius: 8px; margin: 20px 0;">
+                        <p><strong>License Number:</strong> PTS-2024-001247</p>
+                        <p><strong>Issue Date:</strong> January 1, 2024</p>
+                        <p><strong>Expiration Date:</strong> December 31, 2025</p>
+                        <p><strong>Status:</strong> <span style="color: #00ff88;">Active</span></p>
+                    </div>
+                    
+                    <p style="margin: 20px 0; line-height: 1.8;">
+                        This business license grants Pinetree Solution the legal right to operate as an 
+                        e-commerce platform and financial service provider.
+                    </p>
+                    
+                    <div style="text-align: center; margin-top: 40px; border-top: 2px solid #00d4ff; padding-top: 20px;">
+                        <p><strong>Olawale Abdul-Ganiyu</strong></p>
+                        <p style="color: #a8a8a8;">Owner & CEO</p>
+                    </div>
+                `;
+            } else if (type === 'owner') {
+                content = `
+                    <h2 style="color: #00d4ff; text-align: center;">OWNER INFORMATION</h2>
+                    
+                    <div style="background: #16213e; padding: 25px; border-radius: 8px; margin: 20px 0;">
+                        <h3 style="color: #00d4ff; margin-bottom: 20px;">Personal Details</h3>
+                        <p><strong>Full Name:</strong> Olawale Abdul-Ganiyu Adeshina</p>
+                        <p><strong>Title:</strong> Owner & Chief Executive Officer</p>
+                        <p><strong>Company:</strong> Pinetree Solution</p>
+                        <p><strong>Phone:</strong> +2349030277275</p>
+                        <p><strong>Email:</strong> adegan95@gmail.com</p>
+                    </div>
+                    
+                    <div style="background: #16213e; padding: 25px; border-radius: 8px; margin: 20px 0;">
+                        <h3 style="color: #00d4ff; margin-bottom: 20px;">Bank Details</h3>
+                        <p><strong>Bank Name:</strong> United Bank for Africa (UBA)</p>
+                        <p><strong>Account Name:</strong> Olawale Abdul-Ganiyu Adeshina</p>
+                        <p><strong>Account Number:</strong> 2104027565</p>
+                    </div>
+                    
+                    <div style="background: #16213e; padding: 25px; border-radius: 8px; margin: 20px 0;">
+                        <h3 style="color: #00d4ff; margin-bottom: 20px;">Authorization</h3>
+                        <p style="line-height: 1.8;">
+                            I, Olawale Abdul-Ganiyu, hereby confirm that I am the sole owner and authorized 
+                            administrator of Pinetree Solution. I have full authority to manage all business 
+                            operations, financial transactions, and administrative functions.
+                        </p>
+                    </div>
+                    
+                    <div style="text-align: center; margin-top: 40px; border-top: 2px solid #00d4ff; padding-top: 20px;">
+                        <p style="font-size: 1.5em; color: #00d4ff;">Olawale Abdul-Ganiyu</p>
+                        <p style="margin-top: 10px;">Owner, Pinetree Solution</p>
+                        <p style="margin-top: 5px; color: #a8a8a8;">+2349030277275</p>
+                    </div>
+                `;
+            }
+            
+            // Create modal to display document
+            const modal = document.createElement('div');
+            modal.style.cssText = `
+                position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+                background: rgba(0,0,0,0.8); display: flex; justify-content: center;
+                align-items: center; z-index: 1000;
+            `;
+            modal.innerHTML = `
+                <div style="background: #1a1a2e; padding: 40px; border-radius: 15px; max-width: 800px; 
+                     max-height: 80vh; overflow-y: auto; border: 2px solid #00d4ff; margin: 20px;">
+                    <div style="color: #a8a8a8; line-height: 1.6;">
+                        ${content}
+                    </div>
+                    <button onclick="this.parentElement.parentElement.remove()" 
+                            style="width: 100%; margin-top: 30px; padding: 15px; background: #00d4ff; 
+                                   color: #1a1a2e; border: none; border-radius: 8px; font-size: 1.1em; 
+                                   font-weight: bold; cursor: pointer;">
+                        Close Document
+                    </button>
+                </div>
+            `;
+            document.body.appendChild(modal);
+        }
+    </script>
+</body>
+</html>
